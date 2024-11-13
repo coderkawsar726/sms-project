@@ -1,0 +1,282 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h2 class="ui inverted large segment">
+    <img src="{% static '/img/attendance.png' %}" class="ui avatar inline image"> / 
+    {{paneltitle}} 
+    </h2>
+    <div class="ui segment">
+        <form class="ui compact bordered mini form">
+            <div class="ui grid">
+                <div class="three wide column">
+                    <div class="filed">
+                        From
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <div class="filed">
+                        <label for="for">To</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="ten wide column">
+                    <br>
+                    <button type="submit" class="ui black compact button">Search Record</button>
+                    <button type="button" class="ui blue compact button" id="monthview">This Month Report</button>
+                    <button type="button" class="ui brown compact button" id="yearview">This Year Report</button>
+                </div>
+            </div>
+        </form>
+        <div class="ui divider"></div>
+        <table class="ui celled inverted table" style="width: 75%;" id="list-view-attendance">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Attendance</th>
+                    <th>Show cause</th>
+                    <th class="collapsing">Approved by</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td class="collapsing">
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui violet label">Leave</span>
+                    </td>
+                    <td><strong>Leave for illness (Sik Leave)</strong></td>
+                    <td>TH20241254</td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui red label">Absent</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="collapsing">01-February-2024, Monday </td>
+                    <td>
+                        <span class="ui green label">Present</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div  class="ui raised segment" id="monthly-view-attendance" style="display: none;">
+            <h3 class="ui block header">January 2024</h3>
+            <table class="ui collapsing mini celled compact inverted table">
+                <thead>
+                    <tr class="ui inverted black table">
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui brown label">H</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="ui collapsing compact celled inverted table">
+                <thead>
+                    <tr class="ui inverted black table">
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th>16</th>
+                        <th>17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ui brown label">H</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui violet label">L</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui brown label">H</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="ui collapsing compact celled inverted table">
+                <thead>
+                    <tr class="ui inverted black table">
+                        <th>21</th>
+                        <th>22</th>
+                        <th>23</th>
+                        <th>24</th>
+                        <th>25</th>
+                        <th>26</th>
+                        <th>27</th>
+                        <th>28</th>
+                        <th>29</th>
+                        <th>30</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui red label">A</span></td>
+                        <td><span class="ui brown label">H</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui red label">A</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                        <td><span class="ui green label">P</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ui raised segment" id="yearly-view-attendance" style="display: none;">
+            <table class="ui celled compact collapsing table">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                    </tr>
+                </thead>
+                <tbody class="ui center aligned grey">
+                    <tr>
+                        <td>01</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-negetive">A</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-violet">L</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-negetive">A</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        <td class="bg-positive">P</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        
+        $('#monthview').click(function(){
+            $('#list-view-attendance').hide();
+            $('#yearly-view-attendance').hide();
+            $('#monthly-view-attendance').show();
+        });
+
+        $('#yearview').click(function(){
+            $('#list-view-attendance').hide();
+            $('#yearly-view-attendance').show();
+            $('#monthly-view-attendance').hide();
+        });
+    });
+</script>
+{% endblock %}

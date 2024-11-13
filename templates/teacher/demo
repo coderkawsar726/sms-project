@@ -1,0 +1,17 @@
+{% extends 'teacher/menu.html' %}
+{% block title %}{{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <img src="{% static '/img/dashboard.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+        </h2>
+    </div>
+    <div class="ui segment"></div>
+</div>
+</div>
+
+{% endblock %}

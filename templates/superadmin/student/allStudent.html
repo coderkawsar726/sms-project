@@ -1,0 +1,50 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} All Students List {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+        <!-- Panel Header -->
+        <h2 class="ui segment bg-black large block header">
+            <img src="{% static '/img/student.png' %}" alt="" class="ui mini image"> / All Students List
+        </h2>
+
+        <!-- Main Section -->
+        <div class="ui inverted secondary segment" style="height: 92vh;">
+            <h4 class="ui label">Total - {{totalstudent}} records found</h4>
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>ID No</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Guardian Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in allstudent %}
+                    <tr>
+                        <td>{{student.class}}</td>
+                        <td><a href="{% url 'superadmin:studentdetail' pk=student.pk %}" class="ui compact label"><i class="eye icon"></i>{{student.student_id}}</a></td>
+                        <td>{{student.firstname}} {{student.lastname}}</td>
+                        <td>{{student.student_phone}}</td>
+                        <td>{{student.student_email}}</td>
+                        <td>{{student.guardian_phone}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+
+    });
+</script>
+{% endblock %}

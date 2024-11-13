@@ -1,0 +1,49 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h2 class="ui inverted large segment">
+    <img src="{% static '/img/assignment.png' %}" class="ui avatar inline image"> / 
+    {{paneltitle}} 
+    </h2>
+    <div class="ui segment" style="font-family: kalpurush;">
+        <div class="ui grid">
+            <div class="ten wide column">
+                <!-- Assignment Box -->
+                {% for assignment in assignments %}
+                <div class="ui attached message segment" style="background-color: #0C4A6E; color: #fff;">
+                    <div class="header" style="font-family: kalpurush;">
+                      <strong><i class="book icon"></i> Subject- {{assignment.subject}}</strong>
+                    </div>
+                  </div>
+                  <div class="ui attached fluid segment" style="font-size: 16px;">
+                    <small class="ui compact label">Date: {{assignment.publishdate}}</small>
+                    {{assignment.assignment|safe}}
+
+                  </div>
+                  <div class="ui bottom attached info message">
+                    <i class="tag icon"></i>
+                    Assignment mark will be added to your main result mark 
+                  </div>
+                  {% endfor %}
+                <!-- End Assignment Box -->
+            </div>
+            <div class="six wide column">
+              <a href="{% url 'student:printassign' %}" target="_blank" class="ui icon brown button" id="print">
+                <i class="print icon"></i>
+                Print assignment sheet
+              </a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+   
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'teacher/menu.html' %}
+{% block title %} Add Assignment {% endblock %}
+
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <img src="{% static '/img/assignment.png' %}" class="ui avatar inline image"> / Add Assignment 
+        </h2>
+    </div>
+    <div class="ui segment">
+        {{form.media}}
+        <div class="ui raised segment" style="width: 60%; margin: auto;">
+            <form class="ui form" method="POST">
+                <div class="field">
+                    <label for="stclass">Assignment for:</label>
+                    {{form.stclass}}
+                </div>
+                <div class="field">
+                    <label for="subject">Subject:</label>
+                    {{form.subject}}
+                </div>
+                <div class="field">
+                    {{form.assignment}}
+                </div>
+                {{form.publishdate}}
+                {{form.activation}}
+                <div class="field">
+                    {% csrf_token %}
+                    <input type="submit" value="Submit assignment" class="ui fluid blue button">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('#id_stclass').addClass('ui selection dropdown');
+        $('#id_activation').attr('type', 'hidden');
+    });
+</script>
+{% endblock %}

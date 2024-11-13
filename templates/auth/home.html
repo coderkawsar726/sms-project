@@ -1,0 +1,56 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}{{pagetitle}}{% endblock %}
+
+{% block body %}
+
+<section class="mainsection">
+    <div class="overlay1">
+        <div class="ui container" style="padding: 20px 0px;">
+            <br>
+            <h1 class="ui center aligned header" style="color: #fff; font-size: 65px;">School Management System</h1>
+            <hr>
+            <p class="ui center aligned yellow header">
+                School management system is a online based education system. <br>
+                Which included Students, Teachers, Library, Accountant, Assignments, <br>
+                and so many functionality of a modern school. <br><br><br>
+
+                Signup now for access your admin panel <br><br>
+               
+            </p>
+            
+        </div>
+        <div class="ui container four column grid">
+            <div class="column padded panel">
+                <a href="{% url 'student:StDashboard' %}" class="panel-button">
+                    <img src="{% static '/img/student.png' %}" alt="" class="ui tiny centered cirular image"><br>
+                    Student Login
+                </a>
+            </div>
+            <div class="column panel">
+                <a href="#" class="panel-button">
+                    <img src="{% static '/img/teacher.png' %}" alt="" class="ui tiny centered cirular image"><br>
+                    Teacher Login
+                </a>
+            </div>
+            <div class="column panel">
+                <a href="#" class="panel-button">
+                    <img src="{% static '/img/library.png' %}" alt="" class="ui tiny centered cirular image"><br>
+                    Library Login
+                </a>
+            </div>
+            <div class="column panel">
+                <a href="#" class="panel-button">
+                    <img src="{% static '/img/payment.png' %}" alt="" class="ui tiny centered cirular image"><br>
+                    Accountant
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <div class="ui center aligned header bg-black py">Developed by- <i>Mohammad Kawsar Alam</i></div>
+</footer>
+
+{% endblock %}

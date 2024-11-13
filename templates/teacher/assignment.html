@@ -1,0 +1,159 @@
+{% extends 'teacher/menu.html' %}
+{% block title %}{{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+        <div class="">
+            <h2 class="ui segment bg-black block header">
+                <img src="{% static '/img/assignment.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+            </h2>
+        </div>
+        <div class="ui segment">
+            <div class="ui styled fluid accordion">
+                <div class="title">
+                  <i class="dropdown icon"></i>
+                  Assignment for Class 1
+                </div>
+                <div class="content">
+                  <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui floating info message">
+                            <div class="ui middle aligned divided list">
+                              {% for book in class_one %}
+                                <a href="{% url 'teacher:assignlist' subcode=book.id st_class=book.classfor %}" class="item">
+                                    <div class="ui small header">{{book.bookname}}</div>
+                                </a>
+                              {% endfor %}
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                  </div>
+                </div>
+                <div class="title">
+                  <i class="dropdown icon"></i>
+                  Assignment for Class 2
+                </div>
+                <div class="content">
+                  <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui floating info message">
+                            <div class="ui middle aligned divided list">
+                              {% for book in class_two %}
+                                <a href="{% url 'teacher:assignlist' subcode=book.id st_class=book.classfor %}" class="item">
+                                    <div class="ui small header">{{book.bookname}}</div>
+                                </a>
+                              {% endfor %}
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                  </div>
+                </div>
+                <div class="title ">
+                  <i class="dropdown icon"></i>
+                  Assignment for Class 3
+                </div>
+                <div class="content ">
+                  <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui floating info message">
+                            <div class="ui middle aligned divided list">
+                              {% for book in class_three %}
+                                <a href="{% url 'teacher:assignlist' subcode=book.id st_class=book.classfor %}" class="item">
+                                    <div class="ui small header">{{book.bookname}}</div>
+                                </a>
+                              {% endfor %}
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="title ">
+                  <i class="dropdown icon"></i>
+                  Assignment for Class 4
+                </div>
+                <div class="content ">
+                  <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui floating info message">
+                            <div class="ui middle aligned divided list">
+                              {% for book in class_four %}
+                                <a href="{% url 'teacher:assignlist' subcode=book.id st_class=book.classfor %}" class="item">
+                                    <div class="ui small header">{{book.bookname}}</div>
+                                </a>
+                              {% endfor %}
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                  </div>
+                </div>
+
+                <div class="title ">
+                  <i class="dropdown icon"></i>
+                  Assignment for Class 5
+                </div>
+                <div class="content ">
+                  <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui floating info message">
+                            <div class="ui middle aligned divided list">
+                              {% for book in class_five %}
+                                <a href="{% url 'teacher:assignlist' subcode=book.id st_class=book.classfor %}" class="item">
+                                    <div class="ui small header">{{book.bookname}}</div>
+                                </a>
+                              {% endfor %}
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+       $('.ui.accordion').accordion();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Delete/Complete Section</title>
+</head>
+<body style="background-color: #666; padding: 120px 0px;">
+    <div class="ui attached info segments" style="width: 400px; margin: auto; margin-top: 30px !important;">
+        <div class="ui segment"><strong>Confirmation</strong></div>
+        <div class="ui segment">
+            Are you sure you want to complete this assignment for this particular Class?
+        </div>
+        <div class="ui raised segment">
+            <form method="POST" class="ui form">
+                <div>
+                    
+                    <div class="ui modal">
+                        <div class="header">Header</div>
+                        <div class="content">
+                            {{form.media}}
+                            {{form}}
+                        </div>
+                      </div>
+                </div>
+                {% csrf_token %}
+                <input type="submit" value="Confirm" class="ui blue button">
+                <a href="{% url 'teacher:assignlist' subcode=subject.id st_class=stclass %}" class="ui secondary button">Cancel</a>
+            </form>
+        </div>
+        </div>
+        
+    </div>
+
+    <script>
+        $(document).ready(function(){
+        });
+    </script>
+</body>
+</html>

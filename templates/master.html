@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="ui inverted menu">
+        <div class="ui container">
+            <h4 class="ui header yellow item">[School Management System]</h4>
+            <a class="item {% if home_active %} active {% endif %}" href="{% url 'indexpage' %}">
+                Home
+            </a>
+            <a class="item">
+                Academy
+            </a>
+            <a class="item" href="{% url 'teacher:teacherpanel' %}">
+            Teacher
+            </a>
+            <a class="item" href="{% url 'student:StDashboard' %}">
+            Student
+            </a>
+            <a class="item">
+            Library
+            </a>
+            
+            <div class="ui right floated item">
+                <a href="{% url 'auth:login' %}" class="ui compact teal link"><i class="user icon"></i>Admin login</a>
+            </div>
+            
+        </div>
+      </div>
+    <!-- navigationbar end -->
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>

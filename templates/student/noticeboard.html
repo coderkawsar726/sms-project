@@ -1,0 +1,40 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h1 class="ui inverted large segment">
+    <img src="{% static '/img/notice.png' %}" class="ui avatar inline image"> / 
+    {{paneltitle}} 
+    </h1>
+    
+    <div class="ui grid">
+        <div class="ten wide column">
+            <div class="ui segment">
+                <h3 class="ui top block header">Latest Announcements</h3>
+                <div class="ui relaxed divided list">
+                    {% for notice in mynotice %}
+                    <div class="item">
+                        <i class="file alternate outline middle large aligned icon"></i>
+                        <div class="content">
+                            <div class="ui right floated content">
+                                <span class="ui green label">New</span>
+                            </div>
+                            <a class="header">{{notice.notice_subject}}</a>
+                            <div class="description">Published: {{notice.publish_date}}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="column segment"></div>
+    </div>
+    
+</div>
+
+{% endblock %}

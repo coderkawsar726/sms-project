@@ -1,0 +1,153 @@
+{% extends 'teacher/menu.html' %}
+{% block title %}{{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <img src="{% static '/img/dashboard.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+        </h2>
+    </div>
+    <div class="ui segment">
+        <form action="" class="ui form small">
+            <div class="ui grid">
+                <div class="three wide column">
+                    <div class="field">
+                        <label for="">Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <div class="field">
+                        <label for="class">Class: </label>
+                        <select name="class" id="class" class="ui selection dropdown" required> 
+                            <option value="">Select class...</option>
+                            <option value="1">Class 1</option>
+                            <option value="2">Class 2</option>
+                            <option value="3">Class 3</option>
+                            <option value="4">Class 4</option>
+                            <option value="5">Class 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ten wide column">
+                    <div class="field">
+                        <label for="">&nbsp;</label>
+                        <button type="button" class="ui teal button" id="attendance-button">Take attendance</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="ui raised segment">
+            <table class="ui celled selectable compact table">
+                <thead>
+                    <tr class="ui inverted black table">
+                        <th>Roll</th>
+                        <th>Name</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Md Kawsar Alam</td>
+                        <td>
+                            <div class="ui form">
+                                <div class="inline field px">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="st2024001" tabindex="0" class="hidden">
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="ui radio checkbox" style="margin-right: 10px;">
+                                        <input type="radio" name="st2024001" tabindex="0" class="hidden">
+                                        <label>Absent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Masud Alam</td>
+                        <td>
+                            <div class="ui form">
+                                <div class="inline field px">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="st2024002" tabindex="0" class="hidden">
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="ui radio checkbox" style="margin-right: 10px;">
+                                        <input type="radio" name="st2024002" tabindex="1" class="hidden">
+                                        <label>Absent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Saiful Azam Babar</td>
+                        <td>
+                            <div class="ui form">
+                                <div class="inline field px">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="st2024002" tabindex="0" class="hidden">
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="ui radio checkbox" style="margin-right: 10px;">
+                                        <input type="radio" name="st2024002" tabindex="1" class="hidden">
+                                        <label>Absent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Morshed Khan</td>
+                        <td>
+                            <div class="ui form">
+                                <div class="inline field px">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="st2024002" tabindex="0" class="hidden">
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="ui radio checkbox" style="margin-right: 10px;">
+                                        <input type="radio" name="st2024002" tabindex="1" class="hidden">
+                                        <label>Absent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>Abdullah</td>
+                        <td>
+                            <div class="ui form">
+                                <div class="inline field px">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="st2024002" tabindex="0" class="hidden">
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="ui radio checkbox" style="margin-right: 10px;">
+                                        <input type="radio" name="st2024002" tabindex="1" class="hidden">
+                                        <label>Absent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+
+
+{% endblock %}

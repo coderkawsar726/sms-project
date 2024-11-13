@@ -1,0 +1,164 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+        <h2 class="ui inverted large segment">
+            <img src="{% static '/img/dashboard.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+        </h2>
+    <div class="div ui segment">
+        <div class="ui four column centered grid">
+            <div class="column centered">
+                <a href="{% url 'student:StShowAssignment' %}">
+                <div class="panel gradient-red">
+                    <h4 class="ui yellow header">Pending Assignment</h4>
+                    <div class="ui divider"></div>
+                    <span class="cirular">05</span>
+                </div>
+                </a>
+            </div>
+            <div class="column centered">
+                <a href="{% url 'student:StNotice' %}">
+                <div class="panel gradient-blue">
+                    <h4 class="ui yellow header">Pending Announcement</h4>
+                    <div class="ui divider"></div>
+                    <span class="cirular">05</span>
+                </div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="{% url 'student:StLeave' %}">
+                <div class="panel gradient-green">
+                    <h4 class="ui yellow header">Pending Leave</h4>
+                    <div class="ui divider"></div>
+                    <span class="cirular">05</span>
+                </div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="{% url 'student:StPayment' %}">
+                <div class="panel gradient-pink">
+                    <h4 class="ui orange header">Payable Course fee</h4>
+                    <div class="ui divider"></div>
+                    <span class="cirular">05</span>
+                </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <h3 class="ui huge center aligned label header" >Class Rutine for Class 5</h3>
+        <table class="ui celled table">
+            <thead>
+                <tr class="ui inverted table">
+                    <th>Day</th>
+                    <th>1<sup>st</sup> Class</th>
+                    <th>2<sup>nd</sup> Class</th>
+                    <th>3<sup>rd</sup> Class</th>
+                    <th>4<sup>th</sup> Class</th>
+                    <th>||</th>
+                    <th>5<sup>th</sup> Class</th>
+                    <th>6<sup>th</sup> Class</th>
+                    <th>7<sup>th</sup> Class</th>
+                    <th>8<sup>th</sup> Class</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Saturday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Sunday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Monday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                
+                <tr class="active">
+                    <td><strong>Tuesday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Wednesday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Thursday</strong></td>
+                    <td>Bangla 1<sup>st</sup></td>
+                    <td>English 1<sup>st</sup></td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td><strong>T</strong></td>
+                    <td>Islamic History</td>
+                    <td>Social Science</td>
+                    <td>Physical</td>
+                    <td>Droing</td>
+                </tr>
+                <tr class="ui ">
+                    <td colspan="10" class="center aligned">
+                        <strong>
+                            H &nbsp; &nbsp; &nbsp; O 
+                            &nbsp; &nbsp; &nbsp; L
+                            &nbsp; &nbsp; &nbsp; I
+                            &nbsp; &nbsp; &nbsp; D
+                            &nbsp; &nbsp; &nbsp; A
+                            &nbsp; &nbsp; &nbsp; Y
+                        </strong>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

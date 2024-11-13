@@ -1,0 +1,49 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} {{notice.notice_subject}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+        <!-- Panel Header -->
+        <h2 class="ui segment bg-black large block header">
+            <img src="{% static '/img/notice.png' %}" alt="" class="ui mini image"> Read Individual Notice
+        </h2>
+
+        <!-- Main Section -->
+        <div class="ui inverted secondary segment" style="padding: 20px 20px; margin: auto;">
+            <div class="ui segment" style="width: 75%; margin: auto;">
+                <div class="ui segment px-5 py-5" style="padding-bottom: 80px;">
+                    <div class="ui inverted segment"></div>
+                    <h3>
+                        Subject: <a href="" class="ui link">{{notice.notice_subject}}</a>
+                    </h3>
+                    
+                    <span class="meta-text ui label">Published On: {{notice.publish_date}}</span>
+                    <div class="ui divider"></div>
+                    {{notice.notice_body|safe}}
+                    <div class="py-5"></div>
+                </div>
+                <br>
+                {% if notice.active_status == '0' %}
+               
+                <a href="{% url 'superadmin:updatenotice' pk=notice.pk %}" class="ui teal button"><i class="edit icon"></i>Update</a>
+                {% else %}
+                <a href="{% url 'superadmin:updatenotice' pk=notice.pk %}" class="ui teal button"><i class="edit icon"></i>Update</a>
+                <a href="{% url 'superadmin:deletenotice' pk=notice.pk %}" class="ui red button" id="delete"><i class="trash icon"></i>Delete</a>
+                {% endif %}
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        
+        
+    });
+</script>
+{% endblock %}

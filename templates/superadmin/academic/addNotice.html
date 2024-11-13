@@ -1,0 +1,72 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} Write a Notice {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+        <!-- Panel Header -->
+        <h2 class="ui segment bg-black big block header">
+            <img src="{% static '/img/notice.png' %}" alt="" class="ui mini image"> Create Announcement/Notice
+        </h2>
+
+        <!-- Main Section -->
+        <div class="ui inverted secondary segment">
+            <div class="ui attached segments" style="width: 75%; margin: auto;">
+                <div class="ui segment bg-black">
+                    <h3 class="ui center aligned yellow header">Create a new Announcement</h3>
+                </div>
+                <div class="ui segment">
+                    <form method="POST" class="ui form">
+                        <div class="field">
+                            <label>Title of Announcement:</label>
+                            {{form.notice_subject}}
+                        </div>
+                        
+                        <div class="field">
+                            <label>Write Announcement Description:</label>
+                            {{form.media}}
+                            {{form.notice_body}}
+                        </div>
+
+                        <div class="inline field">
+                            <label>Category:</label>
+                            {{form.publish_category}}
+                        </div>
+                        <div class="inline field">
+                            <label>Action:</label>
+                            {{form.active_status}} 
+                        </div>
+                        <div class="field">
+                            {% csrf_token %}
+                            <button type="submit" id="publish-button" class="ui green button"><i class="desktop icon"></i>Publish Announcement</button>
+                            <button type="submit" class="ui teal button" id="save-to-draft"><i class="save icon"></i>Save to Draf</button>
+                            <button href="" id="back" class="ui button"><i class="close icon"></i>Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('#id_publish_category').dropdown();
+        $('#id_active_status').dropdown();
+    });
+</script>
+{% if publish %}
+<script>
+    $(document).ready(function(){
+        $('#id_active_status').css('opacity', '1');
+        // $('#publish-button').click(function(){
+        //     $('#id_active_status').attr('checked');
+        //     $(this).attr('type', 'submit');
+        // });
+    });
+</script>
+{% endif %}
+{% endblock %}

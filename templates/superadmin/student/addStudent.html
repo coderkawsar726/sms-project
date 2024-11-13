@@ -1,0 +1,108 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} Add New Student {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <i class="add user icon"></i> / Add new student
+        </h2>
+    </div>
+    <div class="ui inverted secondary segment">
+        <form method="POST" class="ui segment form" style="width: 60%; margin: auto;" enctype="multipart/form-data">
+            <h3 class="ui block header">New Student Registration</h3>
+            <div class="field">
+                <label for="">Student Generated Id</label>
+                <div class="ui right labeled left icon input">
+                    <span class="ui label">Generated Student ID</span>
+                    {{form.student_id}}
+                    <a class="ui icon button" id="regenerate">
+                      <i class="sync icon"></i></a>
+                  </div>
+            </div>
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="field">
+                        <label for="">First Name</label>
+                        {{form.firstname}}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="">Last Name</label>
+                        {{form.lastname}}
+                    </div>
+                </div>
+            </div>
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="field">
+                        <label for="">Father Name</label>
+                        {{form.fathername}}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="">Mother Name</label>
+                        {{form.mothername}}
+                    </div>
+                </div>
+            </div>
+            <div class="field"></div>
+            <div class="field textarea">
+                <label>Contact Address</label>
+                {{form.address}}
+            </div>
+
+            <div class="field">
+                <label for="">Guardian Phone Number -<small class="muted-text">Seperate each number between a comma ","</small></label>
+                {{form.guardian_phone}}
+            </div>
+
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="field">
+                        <label for="">Student Contact Number</label>
+                        {{form.student_phone}}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="">Student Email</label>
+                        {{form.student_email}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="field">
+                        <label for="">Upload Student Picture</label>
+                        {{form.profile_image}}
+                    </div>
+                </div>
+                <div class="column">
+                    
+                </div>
+            </div>
+
+            <br><br>
+            <div class="ui segment">
+                
+            </div>
+            <div class="field">
+                {% csrf_token %}
+                <input type="submit" value="Save Student Data" class="ui blue button">
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        // $('#id_address').attr('rows', '4');
+    });
+</script>
+{% endblock %}

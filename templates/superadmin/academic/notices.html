@@ -1,0 +1,82 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} Notice Board | Academy {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+        <!-- Panel Header -->
+        <h2 class="ui segment bg-black large block header">
+            <img src="{% static '/img/notice.png' %}" alt="" class="ui mini image"> Notice Board 
+        </h2>
+
+        <!-- Main Section -->
+        
+
+
+        <div class="ui w-75 segment" style="height: 92vh; margin: auto;">
+            <!-- Filter Buttons -->
+            <div class="ui buttons">
+                <button type="button" class="ui compact button" id="publish-button">
+                    <i class="desktop icon"></i>Published
+                </button>
+                <button type="button" class="ui compact button" id="draft-button">
+                    <i class="save icon"></i>Drafts
+                </button>
+            </div>
+            <!-- Published Notice Viewing -->
+            <div class="ui segment" id="publishnotice">
+                <h3 class="ui block header">Latest Published Notice</h3>
+                <div class="ui relaxed divided list">
+                    {% for x in published %}
+                    <div class="item">
+                      <i class="file icon"></i>
+                      <div class="content">
+                        <a class="header" href="{% url 'superadmin:readnotice' pk=x.pk %}">{{x.notice_subject}}</a>
+                        <div class="description">Publish date: {{x.publish_date}}</div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Draft Notice Viewing -->
+            <div class="ui segment" id="draftnotice">
+                <h3 class="ui block header">Draft Notices</h3>
+                {% if draft %}
+                <div class="ui relaxed divided list">
+                    {% for x in draft %}
+                    <div class="item">
+                      <i class="file icon"></i>
+                      <div class="content">
+                        <a class="header" href="{% url 'superadmin:readnotice' pk=x.pk %}">{{x.notice_subject}}</a>
+                        <div class="description">Publish date: {{x.publish_date}}</div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="ui error message">
+                    <div class="header"><i>Not draft notice found in server</i></div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('#draftnotice').hide();
+        $('#publish-button').click(function(){
+            $('#publishnotice').show();
+            $('#draftnotice').hide();
+        });
+        $('#draft-button').click(function(){
+            $('#draftnotice').show();
+            $('#publishnotice').hide();
+        });
+    });
+</script>
+{% endblock %}

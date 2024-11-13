@@ -1,0 +1,64 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} ADMIN DASHBOARD {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment large bg-black block header">
+            <img src="{% static '/img/dashboard.png' %}" alt="" class="ui mini image"> Super Admin Dashboard
+        </h2>
+    </div>
+    <div class="ui segment">
+        
+        <div class="ui four column centered grid">
+            <div class="column centered">
+                <a href="{% url 'superadmin:allstudent' %}">
+                <div class="panel gradient-red">
+                    <h4 class="ui white-text large text-white header">Total Students</h4>
+                    <!-- <div class="ui divider"></div> -->
+                    <span class="ui circular big label">{{totalstudent}}</span>
+                </div>
+                </a>
+            </div>
+            <div class="column centered">
+                <a href="#">
+                <div class="panel gradient-blue">
+                    <h4 class="ui large header text-white">Total Teachers</h4>
+                    <!-- <div class="ui divider"></div> -->
+                    <span class="ui circular big label">{{totalteacher}}</span>
+                </div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="#">
+                <div class="panel gradient-green">
+                    <h4 class="ui large header text-white">Total Staffs</h4>
+                    <!-- <div class="ui divider"></div> -->
+                    <span class="ui circular big label">{{totalstaff}}</span>
+                </div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="#">
+                <div class="panel gradient-pink">
+                    <h4 class="ui large header text-white">Total Students</h4>
+                    <!-- <div class="ui divider"></div> -->
+                    <span class="ui circular big label">{{totalstudent}}</span>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="ui centered header"> 
+            <img src="{% static '/img/logo.png' %}" alt="" style="width: 700px;">
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+       
+    });
+</script>
+{% endblock %}

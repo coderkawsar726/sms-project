@@ -1,0 +1,51 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} ADMIN DASHBOARD {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <i class="book icon"></i> Delete Book
+        </h2>
+    </div>
+    <div class="ui segment" style="height: 90vh;">
+        
+            <div class="ui card" style="width: 35%; margin: auto; background-color:  #ddd; border: 1px solid #666; margin-top: 80px;">
+                <div class="content">
+                  <div class="header">
+                    Delete Confirmation 
+                  </div>
+                  <div class="ui divider"></div>
+                  
+                  <div class="description">
+                    <form method="post" class="ui center aligned form ">
+                        
+                        {% csrf_token %}
+                        
+                    
+                    <strong>You are requesting to parmanently delete a data from academic database. Are you confirm to delete?</strong>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="ui two buttons">
+                    <button type="submit" value="Yes" class="ui green button"><i class="check icon"></i> Yes</button>
+                        <button type="button" id="back" class="ui red button"><i class="close icon"></i> No</button>
+                </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+       $('#back').click(function(){
+        window.history.back();
+       });
+    });
+</script>
+{% endblock %}

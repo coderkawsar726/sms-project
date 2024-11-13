@@ -1,0 +1,32 @@
+{% extends 'master.html' %}
+{% block title %}{{pagetitle}}{% endblock %}
+
+{% block body %}
+<div class="ui container px-5">
+    <div class="center-box">
+        <div class="ui piled segments">
+            <div class="ui segment">
+                <h3 class="ui center aligned header">User Login System</h3>
+            </div>
+            <div class="ui segment">
+                <form method="POST" class="ui form">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" placeholder="Username or email" tabindex="1">
+                    </div>
+                    <div class="field">
+                        <label for="username">Password</label>
+                        <input type="password" placeholder="Enter password" tabindex="2">
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Login" class="ui secondary fluid button">
+                    </div>
+                </form>
+            </div>
+            <div class="ui segment">
+                Not have an account <a href="#" class="ui link">Register now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

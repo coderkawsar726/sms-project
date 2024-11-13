@@ -1,0 +1,69 @@
+{% extends 'teacher/menu.html' %}
+{% block title %}{{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+        <div class="">
+            <h2 class="ui segment bg-black block header">
+                <img src="{% static '/img/leave.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+            </h2>
+        </div>
+        <div class="ui segment">
+            <div class="ui grid">
+                <div class="ten wide column">
+                    <div class="ui segment">
+                        <h4 class="ui block header">Pending Leave Request</h4>
+                        
+                        <div class="ui floating info message">
+                            <div class="header green">
+                              Leave of Advance
+                            </div>
+                            <div class="ui divider"></div>
+                            <p>
+                                <span class="meta-text">From - Md Kawsar Alam || Roll no- 125</span><br>
+                                <strong>Subject: </strong>
+                                <a href="#" class="link" style="text-decoration: underline;">Prayer for leave of advance</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <div class="ui segment">
+                        <h4 class="ui block header">Approved Leaves Today</h4>
+                        <div class="ui relaxed divided list">
+                            <div class="item">
+                              <i class="large check circle outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">Leave of advance</a>
+                                <div class="description">Abdullah || Roll No- 125</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <i class="large check circle outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">Seek Leave</a>
+                                <div class="description">Approve date- 05/03/2024</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <i class="large check circle outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">Annual Leave</a>
+                                <div class="description">Approve date- 24/04/2024</div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

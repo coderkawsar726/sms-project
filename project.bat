@@ -1,0 +1,1 @@
+start D:\Project\sms\venv\Scripts\activate.bat

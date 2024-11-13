@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+<body>
+    <div class="ui grid">
+        <div class="three wide column">
+            <div class="fixed-vertical-menu">
+                <div class="ui vertical inverted large menu">
+                    <div class="center aligned huge item">
+                        <img src="{% static '/img/profile.png' %}" class="ui tiny circular image centered">
+                        <p class="ui center aligned grey large header">Admin Name</p>
+                    </div>
+                    <a href="{% url 'student:StDashboard' %}" class="item {% if active_st_dashboard %} active {% endif %}">
+                        Dashboard
+                    </a>
+                    <a href="{% url 'student:StShowAssignment' %}" class="item {% if active_st_assignment %} active {% endif %}">
+                        Assignments
+                    </a>
+                    <a href="{% url 'student:StShowAttendance' %}" class="item {% if active_st_attendance %} active {% endif %}">
+                        Attendance Report
+                    </a>
+                    <a href="{% url 'student:StLeave' %}" class="item {% if active_st_leave %} active {% endif %}">
+                        Leave of Absent Report
+                    </a>
+                    <a href="{% url 'student:StNotice' %}" class="item {% if active_st_notice %} active {% endif %}">
+                        Notice/Announcement
+                    </a>
+                    <a href="{% url 'student:StPayment' %}" class="item {% if active_st_payment %} active {% endif %}">
+                        Payment option
+                    </a>
+                    <br><br>
+                    <a class="ui vertical animated secondary button" tabindex="0" href="{% url 'student:StProfile' %}">
+                        <div class="visible content"><i class="user large icon"></i></div>
+                        <div class="hidden content">
+                          Profile
+                        </div>
+                    </a>
+                    
+                    <div class="ui vertical animated secondary button" tabindex="0">
+                        <div class="visible content"><i class="lock icon large"></i></div>
+                        <div class="hidden content">
+                          Password
+                        </div>
+                    </div>
+                    <a class="ui vertical animated secondary button" tabindex="0" href="{% url 'indexpage' %}">
+                        <div class="visible content"><i class="power off large icon"></i></div>
+                        <div class="hidden content">
+                          Logout
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    {% block body %}
+
+    {% endblock %}
+</div>
+</div>
+</div>
+<script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'teacher/menu.html' %}
+{% block title %} Assignment List {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <img src="{% static '/img/dashboard.png' %}" class="ui avatar inline image"> / Assignment List for  
+        </h2>
+    </div>
+    <div class="ui segment">
+        
+        <a href="{% url 'teacher:addassignment' sb=subject cl=class %}" class="ui blue button">Add Assignment</a>
+        <div class="ui divider"></div>
+        {% if assign %}
+        <div class="ui segment">
+            <!-- <div class="ui two column grid">
+                <div class="column"> -->
+
+                    {% for ass in assign %}
+                    <!-- Assignment Box -->
+                    <div class="ui attached info message segment inline"  style="width: 48%;">
+                        <div class="header">
+                            <strong>Subject- </strong>{{ass.subject}}
+                        </div>
+                      </div>
+                      <div class="ui attached fluid segment" style="width: 48%;">
+                        <small class="ui compact label">Date: {{ass.publishdate}}</small>
+                        <br>
+                        {{ass.assignment|safe}}
+                      </div>
+                      <div class="ui bottom attached info message" style="width: 48%;">
+                        <i class="icon help"></i>
+                        After completing assignment, Click <a href="{% url 'teacher:deleteassign' pk=ass.pk  %}" class="ui compact teal button"><i class="check icon"></i> Complete</a>
+                      </div>
+
+                    {% endfor %}
+                <!-- </div>
+            </div> -->
+        </div>
+        {% else %}
+        <strong>No assignment found for this subject</strong>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+{% endblock %}

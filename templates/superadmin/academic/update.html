@@ -1,0 +1,46 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %}{{pagetitle}} Update Book {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column" style="z-index: 99;">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <i class="book icon"></i> / UPDATE BOOK
+        </h2>
+    </div>
+    <div class="ui segment">
+        
+        <div class="ui segment" style="width: 40%; margin: auto;">
+    
+            <form method="POST" class="ui form" style="padding: 15px;">
+                <h3 class="ui block header">Update Book</h3>
+                <div class="field">
+                    <label for="bookname">Book Name</label>
+                    {{form.bookname}}
+                </div>
+                <div class="field">
+                    <label for="classfor">Class</label>
+                    {{form.classfor}}
+                </div>
+                <div class="field">
+                    <label for="classfor">Subject Code</label>
+                    {{form.subjectcode}}
+                </div>
+                <div class="field">
+                    {% csrf_token %}
+                    <input type="submit" value="UPDATE CHANGES" class="ui blue button">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+       
+    });
+</script>
+{% endblock %}

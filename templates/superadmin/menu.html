@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+<body>
+    <div class="ui grid">
+        <div class="three wide column">
+            <div class="fixed-vertical-menu">
+                <div class="ui vertical inverted large menu">
+                    <div class="center aligned huge item">
+                        <img src="{% static '/img/profile.png' %}" class="ui tiny circular image centered">
+                        <p class="ui center aligned grey large header">Super Admin</p>
+                    </div>
+                    <a href="{% url 'superadmin:admindashboard' %}" class="item ">
+                        Dashboard
+                    </a>
+                    <div class="ui inverted dropdown item">
+                        Academy
+                        <i class="dropdown icon"></i>
+                        <div class="menu sub-menu">
+                          <a class="item" href="{% url 'superadmin:addbook' %}">
+                            <i class="add user icon"></i> Add Book
+                          </a>
+                          <a class="item" href="{% url 'superadmin:booklist' %}">
+                            <i class="list alternate outline icon"></i> Book List
+                          </a>
+                          <a class="item">
+                            <i class="wrench icon"></i> Settings
+                          </a>
+                        </div>
+                    </div>
+                    <div class="ui inverted dropdown item">
+                        Student
+                        <i class="dropdown icon"></i>
+                        <div class="menu sub-menu">
+                          <a class="item" href="{% url 'superadmin:addstudent' %}">
+                            <i class="add user icon"></i> Add New Student
+                          </a>
+                          <a class="item" href="{% url 'superadmin:allstudent' %}">
+                            <i class="list alternate outline icon"></i> All Student
+                          </a>
+                        </div>
+                    </div>
+
+                    <div class="ui inverted dropdown item">
+                    Teacher
+                    <i class="dropdown icon"></i>
+                    <div class="menu sub-menu">
+                        <a class="item">
+                        <i class="add user icon"></i> Add Teacher
+                        </a>
+                        <a class="item">
+                        <i class="list alternate outline icon"></i> All Teacher
+                        </a>
+                    </div>
+                    </div>
+                    
+                    <div class="ui inverted dropdown item">
+                    Staff
+                    <i class="dropdown icon"></i>
+                    <div class="menu sub-menu">
+                        <a class="item">
+                        <i class="add user icon"></i> Add New Staff
+                        </a>
+                        <a class="item">
+                        <i class="list alternate outline icon"></i> All Staff List
+                        </a>
+                    </div>
+                    </div>
+                    <div class="ui inverted dropdown item">
+                      Notice / Announcement
+                      <i class="dropdown icon"></i>
+                      <div class="menu sub-menu">
+                          <a class="item" href="{% url 'superadmin:createnotice' %}">
+                          <i class="add user icon"></i> Write a notice
+                          </a>
+                          <a class="item" href="{% url 'superadmin:noticelist' %}">
+                          <i class="list alternate outline icon"></i> Published Notices
+                          </a>
+                          <a class="item">
+                          <i class="list alternate outline icon"></i> Draft Notices
+                          </a>
+                      </div>
+                    </div>
+                    <a href="#" class="item ">
+                        Salary Management
+                    </a>
+                    
+                    <a href="#" class="item ">
+                        Payment option
+                    </a>
+                    <br><br>
+                    <div class="ui vertical animated secondary button" tabindex="0">
+                        <div class="visible content"><i class="user large icon"></i></div>
+                        <div class="hidden content">
+                          Profile
+                        </div>
+                    </div>
+                    
+                    <div class="ui vertical animated secondary button" tabindex="0">
+                        <div class="visible content"><i class="lock icon large"></i></div>
+                        <div class="hidden content">
+                          Password
+                        </div>
+                    </div>
+                    <a class="ui vertical animated secondary button" tabindex="0" href="{% url 'indexpage' %}">
+                        <div class="visible content"><i class="power off large icon"></i></div>
+                        <div class="hidden content">
+                          Logout
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    {% block body %}
+
+    {% endblock %}
+</div>
+</div>
+</div>
+<script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

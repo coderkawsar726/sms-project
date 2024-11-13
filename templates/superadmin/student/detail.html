@@ -1,0 +1,55 @@
+{% extends 'superadmin/menu.html' %}
+{% block title %} Detail Student Data {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <div class="ui segments">
+    <div class="">
+        <h2 class="ui segment bg-black block header">
+            <img src="{% static '/img/dashboard.png' %}" class="ui avatar inline image"> Student Information Detail
+        </h2>
+    </div>
+    <div class="ui segment" style="width: 60%;">
+       
+        <table class="ui celled inverted table">
+            <thead>
+                <tr>
+                    <td colspan="2"> <img src="{% if data.profile_image %}{{data.profile_image.url}}{% endif %}" alt="" class="ui small image centered bordered">
+                    {% if not data.profile_image %}
+                    <p class="ui center aligned content">
+                        <span class="ui label">Image Not Found</span>
+                    </p>
+                    {% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Student ID</th>
+                    <td>{{data.student_id}} </td>
+                </tr>
+                <tr>
+                    <th>Student Name</th>
+                    <td>{{data.firstname}} {{data.lastname}}</td>
+                </tr>
+                <tr>
+                    <th>Contact Address </th>
+                    <td>{{data.address}}</td>
+                </tr>
+                <tr>
+                    <th>Guardian Contact Number </th>
+                    <td>{{data.guardian_phone}}</td>
+                </tr>
+                <tr>
+                    <th>Student Contact Number </th>
+                    <td>{{data.student_phone}}</td>
+                </tr>
+                <tr>
+                    <th>Student Email </th>
+                    <td>{{data.student_email}}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+{% endblock %}

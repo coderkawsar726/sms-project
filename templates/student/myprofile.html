@@ -1,0 +1,107 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h2 class="ui inverted large segment">
+        <img src="{% static '/img/student.png' %}" class="ui avatar inline image"> / {{paneltitle}}
+    </h2>
+    
+    <div class="ui segment container">
+        <div class="ui two column grid">
+            <div class="column">
+                <div class="ui card" style="width: 100% !important;">
+                    <div class="content">
+                      <div class="header">Student Information for ID- ST20240156</div>
+                    </div>
+                    <div class="content">
+                      <h4 class="ui sub header">Roll No: 125</h4>
+                      <div class="ui small feed">
+                        <div class="event">
+                          <div class="content">
+                            <div class="summary">
+                               <table class="ui celled table">
+                                <thead>
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>Mohammad Kawsar Alam</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Guardian Name</td>
+                                        <td>Nobi Hossain</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class</td>
+                                        <td>Primary 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>Maizpara, Patenga, Chittagong, Bangladesh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone No</td>
+                                        <td>+880 1826531364</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td><a href="mailto:kawsaralam@gmail.com">kawsaralamksa2021@gmail.com</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Course Fee</td>
+                                        <td>500 BDT / Month</td>
+                                    </tr>
+                                </tbody>
+                               </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <button class="ui brown button"><i class="print icon"></i> Print my ID</button>
+                      <button class="ui brown button"><i class="print icon"></i> Print Student Form</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="ui card" style="width: 75% !important; padding: 20px;">
+                    <h4 class="ui block header">Update basic information</h4>
+                    <div class="description">
+                        <form class="ui form">
+                            <div class="field">
+                              <label>Username</label>
+                              <input type="text" name="first-name" value="kawsaralam772">
+                            </div>
+                            <div class="field">
+                              <label>User email</label>
+                              <input type="text" name="last-name" value="kawsaralamksa2021@gmail.com">
+                            </div>
+                            <div class="field">
+                              <label>Contact Number</label>
+                              <input type="text" name="last-name" value="+880 1826531364">
+                            </div>
+                            <div class="field">
+                              <label>Password</label>
+                              <div class="ui action input">
+                                <input type="password" name="last-name" value="kawsar726">
+                                <button class="ui icon button">
+                                  <i class="eye icon"></i>
+                                </button>
+                              </div>
+                              
+                            </div>
+                            <button class="ui positive button" type="submit"><i class="save icon"></i>Save Changes</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

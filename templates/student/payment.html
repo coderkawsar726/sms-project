@@ -1,0 +1,116 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h1 class="ui inverted large segment">
+    <img src="{% static '/img/payment.png' %}" class="ui avatar inline image"> / 
+    {{paneltitle}} 
+    </h1>
+    
+    <div class="ui segment" style="width: 100%;">
+        <div class="ui container" style="padding: 15px !important;">
+            <div class="ui grid">
+                <div class="ten wide column">
+                    <!-- <h2 class="ui horizontal divider header">
+                        <img src="{% static '/img/payment.png' %}" alt="" class="">
+                        Course payment details
+                      </h2> -->
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <h2 class="ui icon segment center blue aligned header">
+                                <div class="content">
+                                  5000 <small>Taka</small>
+                                  <div class="sub header">Your Total Course Fee</div>
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="column">
+                            <h2 class="ui icon segment center purple aligned header">
+                                <div class="content">
+                                  500 <small>Taka</small>
+                                  <div class="sub header">You have to pay per month</div>
+                                </div>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <div class="ui segment">
+                        <h4 class="ui dividing header">Due payments</h4>
+                        <p>No amount you have to pay this month...</p>
+                        <br>
+
+                        <hr>
+                        <h4 class="ui dividing header">Payment History</h4>
+                        <div class="ui relaxed divided list">
+                            <div class="item">
+                              <i class="large money bill alternate outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">First Term Exam Fee</a>
+                                <div class="description">Amount- 5530 | date- 24/03/2024</div>
+                              </div>
+                            </div>
+                            
+                            <div class="item">
+                              <i class="large money bill alternate outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">First Term Exam Fee</a>
+                                <div class="description">Amount- 5530 | date- 24/03/2024</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <i class="large money bill alternate outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">First Term Exam Fee</a>
+                                <div class="description">Amount- 5530 | date- 24/03/2024</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <i class="large money bill alternate outline middle aligned icon"></i>
+                              <div class="content">
+                                <a class="header">First Term Exam Fee</a>
+                                <div class="description">Amount- 5530 | date- 24/03/2024</div>
+                              </div>
+                            </div>
+
+                          </div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <div class="ui card">
+                        <div class="content">
+                          <div class="header">Payment Option</div>
+                        </div>
+                        <div class="content">
+                            <form class="ui form">
+                                <div class="field">
+                                    <select class="ui fluid selection dropdown" required>
+                                        <option value="">Select...</option>
+                                        <option value="1">First Term Exam.</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Number you paid from:</label>
+                                    <input type="text" placeholder="+880 1234567890" required>
+                                </div>
+                                <div class="field">
+                                    <label>Trasection ID</label>
+                                    <input type="text" placeholder="DXTN4587Y896" required>
+                                    <small class="red-text">Be carefull when entering transection code because a little imstake can destroy your payment.</small>
+                                </div>
+                        </div>
+                            <div class="extra content">
+                            <button class="ui teal button" type="sub">Submit payment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

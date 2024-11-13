@@ -1,0 +1,101 @@
+
+{% extends 'adminpanel.html' %}
+{% block title %} {{pagetitle}} {% endblock %}
+{% load static %}
+{% block body %}
+
+<div class="thirteen wide column">
+    <h1 class="ui inverted large segment">
+    <img src="{% static '/img/leave.png' %}" class="ui avatar inline image"> / 
+    {{paneltitle}} 
+    </h1>
+
+    <div class="ui segment">
+        <button class="ui blue button" id="leave_request"><i class="calendar plus icon"></i> Request for a leave</button><br><br>
+        <div class="ui grid">
+            <div class="ten wide column">
+                <div class="ui segment">
+                    <h4 class="ui block header">Pending Leave Request</h4>
+                    
+                    <div class="ui floating info message">
+                        <div class="header green">
+                          Leave of Advance
+                        </div>
+                        <div class="ui divider"></div>
+                        <p>
+                            <span class="meta-text">From 24/03/2024 to 26/03/2024</span><br>
+                            <strong>Subject: </strong>
+                            <a href="#" class="link" style="text-decoration: underline;">Prayer for leave of advance</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="six wide column">
+                <div class="ui segment">
+                    <h4 class="ui block header">Previous Approved Leaves</h4>
+                    <div class="ui relaxed divided list">
+                        <div class="item">
+                          <i class="large check circle outline middle aligned icon"></i>
+                          <div class="content">
+                            <a class="header">Leave of advance</a>
+                            <div class="description">Approve date- 24/02/2024</div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <i class="large check circle outline middle aligned icon"></i>
+                          <div class="content">
+                            <a class="header">Seek Leave</a>
+                            <div class="description">Approve date- 05/03/2024</div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <i class="large check circle outline middle aligned icon"></i>
+                          <div class="content">
+                            <a class="header">Annual Leave</a>
+                            <div class="description">Approve date- 24/04/2024</div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Leave Request form -->
+    <div class="ui tiny modal">
+        <div class="header">Leave Request Form</div>
+        <div class="content">
+          <div class="ui container">
+            <form class="ui form">
+                
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <input type="text" placeholder="Write your subject">
+                </div>
+                <div class="field">
+                    <label for="">Type of leave</label>
+                    <select name="card[exp]" class="ui fluid selection dropdown">
+                        <option value="">Select...</option>
+                        <option value="0">Seek Leave</option>
+                        <option value="1">Annual Leave</option>
+                        <option value="2">Advance Leave</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="description">Application body</label>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Write your problem here"></textarea>
+                </div>
+              </form>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui approve blue button">Send Request</div>
+          <div class="ui cancel button">Cancel</div>
+        </div>
+      </div>
+    <!-- Leave request form end -->
+</div>
+
+
+{% endblock %}
